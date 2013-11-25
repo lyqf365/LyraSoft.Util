@@ -71,12 +71,15 @@ namespace TestCmd
             obj.SayHello = LyraSoft.Util.DelegateObj.Function(new LyraSoft.Util.DyMethodDelegate((x, y) => {
 
                 Console.WriteLine("{0} {1}!", x.Hello, x.World);
+                foreach (var object__ in y)
+                    Console.WriteLine(object__);
                 ;return null; }));
 
 
             Console.WriteLine("{0} {1}!", obj.Hello, obj.World);
 
             obj.SayHello();
+            obj.SayHello("abc", "ABC");
                 Console.ReadKey(true);
         }
     }
