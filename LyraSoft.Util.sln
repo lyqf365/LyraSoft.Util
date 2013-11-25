@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyraSoft.Util.Geo", "LyraSoft.Util.Geo\LyraSoft.Util.Geo.csproj", "{4B5C43F1-3063-4261-9ECA-57CF9326CD39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{41F977E5-8BE7-4C5D-A090-F4895CB5FFBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SRC", "SRC", "{0F0E2575-DD81-4395-A5B6-4FB9C6BF6653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCmd", "TestCmd\TestCmd.csproj", "{8D4AD8FE-58B9-4B19-9E9C-FBA4648B68BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyraSoft.Util", "LyraSoft.Util\LyraSoft.Util.csproj", "{4CF87702-81A0-4E2D-A66F-5096C86ECA21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B5C43F1-3063-4261-9ECA-57CF9326CD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B5C43F1-3063-4261-9ECA-57CF9326CD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B5C43F1-3063-4261-9ECA-57CF9326CD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B5C43F1-3063-4261-9ECA-57CF9326CD39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4AD8FE-58B9-4B19-9E9C-FBA4648B68BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4AD8FE-58B9-4B19-9E9C-FBA4648B68BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4AD8FE-58B9-4B19-9E9C-FBA4648B68BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4AD8FE-58B9-4B19-9E9C-FBA4648B68BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF87702-81A0-4E2D-A66F-5096C86ECA21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF87702-81A0-4E2D-A66F-5096C86ECA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF87702-81A0-4E2D-A66F-5096C86ECA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF87702-81A0-4E2D-A66F-5096C86ECA21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B5C43F1-3063-4261-9ECA-57CF9326CD39} = {0F0E2575-DD81-4395-A5B6-4FB9C6BF6653}
+		{4CF87702-81A0-4E2D-A66F-5096C86ECA21} = {0F0E2575-DD81-4395-A5B6-4FB9C6BF6653}
+		{8D4AD8FE-58B9-4B19-9E9C-FBA4648B68BF} = {41F977E5-8BE7-4C5D-A090-F4895CB5FFBA}
+	EndGlobalSection
+EndGlobal
