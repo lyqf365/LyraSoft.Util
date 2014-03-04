@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace LyraSoft.Util
 {
 
-
-    public class DynamicObj : DynamicObject
+    [Serializable]
+    public class DynamicObj : DynamicObject,ISerializable
     {
         //保存对象动态定义的属性值
         private readonly Dictionary<string, object> _values;
@@ -88,6 +89,16 @@ namespace LyraSoft.Util
         public override bool TryInvoke(InvokeBinder binder, object[] args, out object result)
         {
             return base.TryInvoke(binder, args, out result);
+        }
+
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            foreach (var kvp in this._values)
+            {
+                if (kvp.Value is DelegateObj)
+                    continue;
+                info.AddValue(kvp.Key, kvp.Value);
+            }
         }
     }
 

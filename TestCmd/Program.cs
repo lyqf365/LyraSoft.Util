@@ -67,6 +67,7 @@ namespace TestCmd
 
             obj.Hello = "Hello";
             obj.World = "World";
+            obj.List = new int[] { 1,2,3,4,5};
 
             obj.SayHello = LyraSoft.Util.DelegateObj.Function(new LyraSoft.Util.DyMethodDelegate((x, y) => {
 
@@ -77,6 +78,8 @@ namespace TestCmd
 
 
             Console.WriteLine("{0} {1}!", obj.Hello, obj.World);
+
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
 
             obj.SayHello();
             obj.SayHello("abc", "ABC");
