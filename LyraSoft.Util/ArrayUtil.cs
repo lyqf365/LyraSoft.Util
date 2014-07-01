@@ -28,5 +28,33 @@ namespace LyraSoft.Util
             return true;
         }
 
+
+        public static byte[] StringToBinary(string input)
+        {
+            if (input.Length % 2 != 0)
+                throw new ArgumentException();
+
+            byte[] data = new byte[(input.Length) / 2];
+
+            for (int i = 0; i < data.Length; ++i)
+            {
+                data[i]= byte.Parse(input.Substring(2*i,2), System.Globalization.NumberStyles.HexNumber);
+            }
+            return data;
+        }
+
+        public static string BinaryToString(byte[] input)
+        {
+            StringBuilder _ret = new StringBuilder(input.Length * 2);
+
+            foreach (var ch in input)
+            {
+                _ret.AppendFormat("{0:X2}", ch);
+            }
+
+            return _ret.ToString();
+        }
+
+
     }
 }
