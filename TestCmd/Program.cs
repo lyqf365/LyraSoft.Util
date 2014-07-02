@@ -18,11 +18,11 @@ namespace TestCmd
             Console.WriteLine(dis);
 
 
-//            起点经度：116.235(度)
-//终点纬度：37.435(度)
-//方向角：50（度）
-//长度：500（米）
-//终点经纬度（"经度,纬度"）=Computation(37.435,116.235,50,500)
+            //            起点经度：116.235(度)
+            //终点纬度：37.435(度)
+            //方向角：50（度）
+            //长度：500（米）
+            //终点经纬度（"经度,纬度"）=Computation(37.435,116.235,50,500)
 
             double lat2, lng2;
             double lat1, lng1;
@@ -33,7 +33,7 @@ namespace TestCmd
             LyraSoft.Util.Geo.GeoCalculator.GetPostion(lng1, lat1, dir, dis, out lng2, out lat2);
 
 
-             dir = LyraSoft.Util.Geo.GeoCalculator.GetDirection(lng1,lat1,lng2,lat2);
+            dir = LyraSoft.Util.Geo.GeoCalculator.GetDirection(lng1, lat1, lng2, lat2);
             Console.WriteLine(dir);
 
 
@@ -48,33 +48,35 @@ namespace TestCmd
 
             var filepath = Console.ReadLine();
 
-            if(File.Exists(filepath))
-            using (var file = File.Open(filepath, FileMode.Open, FileAccess.Read))
-            {
-                int aa = LyraSoft.Util.FileCheck.CheckSum.CheckSum32(file);
-                string bb = Convert.ToString(aa, 16).ToUpper();
-                Console.WriteLine(bb);
-    
-                file.Seek(0L, SeekOrigin.Begin);
-                var Crc16 = new LyraSoft.Util.FileCheck.CRC16Provider();
-                 aa = Crc16.CRC16(file);
-                 bb = Convert.ToString(aa, 16).ToUpper();
-                Console.WriteLine(bb);
-            }
+            if (File.Exists(filepath))
+                using (var file = File.Open(filepath, FileMode.Open, FileAccess.Read))
+                {
+                    int aa = LyraSoft.Util.FileCheck.CheckSum.CheckSum32(file);
+                    string bb = Convert.ToString(aa, 16).ToUpper();
+                    Console.WriteLine(bb);
+
+                    file.Seek(0L, SeekOrigin.Begin);
+                    var Crc16 = new LyraSoft.Util.FileCheck.CRC16Provider();
+                    aa = Crc16.CRC16(file);
+                    bb = Convert.ToString(aa, 16).ToUpper();
+                    Console.WriteLine(bb);
+                }
 
 
             dynamic obj = new LyraSoft.Util.DynamicObj();
 
             obj.Hello = "Hello";
             obj.World = "World";
-            obj.List = new int[] { 1,2,3,4,5};
+            obj.List = new int[] { 1, 2, 3, 4, 5 };
 
-            obj.SayHello = LyraSoft.Util.DelegateObj.Function(new LyraSoft.Util.DyMethodDelegate((x, y) => {
+            obj.SayHello = LyraSoft.Util.DelegateObj.Function(new LyraSoft.Util.DyMethodDelegate((x, y) =>
+            {
 
                 Console.WriteLine("{0} {1}!", x.Hello, x.World);
                 foreach (var object__ in y)
                     Console.WriteLine(object__);
-                ;return null; }));
+                ; return null;
+            }));
 
 
             Console.WriteLine("{0} {1}!", obj.Hello, obj.World);
@@ -83,7 +85,24 @@ namespace TestCmd
 
             obj.SayHello();
             obj.SayHello("abc", "ABC");
-                Console.ReadKey(true);
+
+            //------------------
+            long arg = -100;
+            arg = LyraSoft.Util.Code.OrderConvert.HostToNetworkOrder(arg);
+            Console.WriteLine(arg);
+            arg = LyraSoft.Util.Code.OrderConvert.NetworkToHostOrder(arg);
+            Console.WriteLine(arg);
+
+
+            string str= LyraSoft.Util.ArrayUtil.BinaryToString(new byte[] { 0xAA,0x33});
+            byte[] bin = LyraSoft.Util.ArrayUtil.StringToBinary(str);
+
+            Console.WriteLine(str);
+            Console.WriteLine(BitConverter .ToString(bin).Replace("-",""));
+
+
+
+            Console.ReadKey(true);
         }
     }
 }
