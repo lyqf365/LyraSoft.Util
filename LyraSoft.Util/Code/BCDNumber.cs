@@ -5,8 +5,8 @@ using System.Text;
 
 namespace LyraSoft.Util.Code
 {
-     struct BCDNumber
-    {
+     public struct BCDNumber
+     {
         #region  数据存储
         private bool _sign;
         private byte _digit0;
@@ -40,50 +40,49 @@ namespace LyraSoft.Util.Code
 
         public static implicit operator double(BCDNumber num)
         {
-            
-            return 0;
+            throw new  NotImplementedException();
         }
         public static implicit operator float(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
         public static implicit operator sbyte(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
         public static implicit operator byte(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
         public static implicit operator short(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
         public static implicit operator ushort(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
         public static implicit operator int(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
         public static implicit operator uint(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
         public static implicit operator long(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
 
         public static implicit operator ulong(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
 
         public static implicit operator System.Numerics.BigInteger(BCDNumber num)
         {
-            return 0;
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -93,13 +92,13 @@ namespace LyraSoft.Util.Code
         public static bool operator==(BCDNumber lhr,BCDNumber rhr)
         {
 
-            return false;
+            throw new NotImplementedException();
         }
 
 
         public static bool operator !=(BCDNumber lhr, BCDNumber rhr)
         {
-            return true;
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -118,14 +117,16 @@ namespace LyraSoft.Util.Code
         }
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            throw new NotImplementedException();
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            throw new NotImplementedException();
         }
 
         #endregion
+
+       
     }
 }
