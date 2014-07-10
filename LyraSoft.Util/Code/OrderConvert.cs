@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 
 namespace LyraSoft.Util.Code
@@ -52,6 +53,11 @@ namespace LyraSoft.Util.Code
             }
         }
 
+        public static BigInteger NetworkToHostOrder(BigInteger arg)
+        {
+            return new BigInteger(arg.ToByteArray().Reverse().ToArray());
+        }
+
         #endregion
 
         #region HostToNetworkOrder
@@ -96,6 +102,12 @@ namespace LyraSoft.Util.Code
                 return (ulong)System.Net.IPAddress.HostToNetworkOrder((long)arg);
             }
         }
+
+        public static BigInteger HostToNetworkOrder(BigInteger arg)
+        {
+            return new BigInteger(arg.ToByteArray().Reverse().ToArray());
+        }
+
         #endregion
 
 
